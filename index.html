@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgBizLogic AI/UX - Oregon State University Capstone Project. Enhancing usability and trust in agricultural decision support through AI and UX improvements.">
+    <meta name="keywords" content="AgBizLogic, AI, UX, Agriculture, Oregon State University, Capstone">
     <title>AgBizLogic AI/UX - OSU Capstone Project</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
 <body>
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#problem">Problem</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#technical">Technical</a></li>
+                <li><a href="#access">Access</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <header class="hero">
         <div class="container">
             <h1>AgBizLogic AI/UX</h1>
@@ -24,7 +42,7 @@
     </header>
 
     <main class="container">
-        <section class="team">
+        <section class="team" id="team">
             <h2>Team</h2>
             <div class="team-grid">
                 <div class="team-member">
@@ -46,13 +64,16 @@
             </div>
         </section>
 
-        <section class="project-summary">
+        <section class="project-summary" id="summary">
             <h2>Project Summary</h2>
-            <p>AgBizLogic is a suite of decision-support tools developed to help growers and landowners make data-driven choices regarding the financial and environmental impact of their farm operations. While powerful, the platform's existing interface presents usability barriers for growers, especially those with low technical experience or inconsistent usage patterns.</p>
-            <p>Our team conducted research and testing to explore how AI-driven features and UX improvements could better support users' goals. We focused on building trust, simplifying user journeys, and enabling contextual help using large language models (LLMs).</p>
+            <div class="tech-content">
+                <p>AgBizLogic is a suite of decision-support tools developed to help growers and landowners make data-driven choices regarding the financial and environmental impact of their farm operations. While powerful, the platform's existing interface presents usability barriers for growers, especially those with low technical experience or inconsistent usage patterns.</p>
+                
+                <p>Our team conducted research and testing to explore how AI-driven features and UX improvements could better support users' goals. We focused on building trust, simplifying user journeys, and enabling contextual help using large language models (LLMs).</p>
+            </div>
         </section>
 
-        <section class="timeline">
+        <section class="timeline" id="timeline">
             <h2>Project Timeline</h2>
             <div class="timeline-grid">
                 <div class="timeline-item">
@@ -70,18 +91,21 @@
             </div>
         </section>
 
-        <section class="problem-statement">
+        <section class="problem-statement" id="problem">
             <h2>Problem Statement</h2>
-            <p>Despite the capabilities of AgBizLogic, the platform has not seen widespread adoption among growers who need it most. Through interviews and testing, we discovered that many users:</p>
-            <ul>
-                <li>Struggle to remember how to navigate AgBizLogic after periods of non-use</li>
-                <li>Avoid documentation due to its length and technical tone</li>
-                <li>Distrust AI-generated outputs, especially when sources or logic are unclear</li>
-                <li>Prefer verbal, conversational assistance rather than complex interfaces</li>
-            </ul>
+            <div class="tech-content">
+                <p>Despite the capabilities of AgBizLogic, the platform has not seen widespread adoption among growers who need it most. Through interviews and testing, we discovered that many users:</p>
+                <ul>
+                    <li>Struggle to remember how to navigate AgBizLogic after periods of non-use</li>
+                    <li>Avoid documentation due to its length and technical tone</li>
+                    <li>Distrust AI-generated outputs, especially when sources or logic are unclear</li>
+                    <li>Prefer verbal, conversational assistance rather than complex interfaces</li>
+                </ul>
+                <p>These barriers impact the accessibility and long-term effectiveness of AgBizLogic. Our project addressed these issues through targeted design and AI integration.</p>
+            </div>
         </section>
 
-        <section class="target-audience">
+        <section class="target-audience" id="audience">
             <h2>Target Audience</h2>
             <div class="audience-grid">
                 <div class="audience-card">
@@ -99,11 +123,12 @@
             </div>
         </section>
 
-        <section class="core-features">
+        <section class="core-features" id="features">
             <h2>Core Features and Benefits</h2>
+            <!-- <p>Our solution does not include a new software build, but rather a comprehensive research-backed proposal. The core features include:</p> -->
             <div class="features-grid">
                 <div class="feature-card">
-                    <h3>AI Chatbot Assistant</h3>
+                    <h3>AI Chatbot Assistant (Figma Prototype)</h3>
                     <p>A conversational interface that provides contextual help, explains terminology, and guides users through complex workflows in AgBizLogic.</p>
                 </div>
                 <div class="feature-card">
@@ -121,15 +146,47 @@
             </div>
         </section>
 
-        <section class="findings">
-            <h2>Key Findings from User Testing</h2>
-            <div class="findings-content">
-                <p>User testing revealed several critical insights about how growers and other stakeholders interact with AI and decision-support tools in the agricultural domain. One of the most consistent patterns was a strong preference for responses that were brief, clear, and free of jargon.</p>
-                <p>Among the models tested, DeepSeek consistently outperformed the others, with participants citing its structured and straightforward style as easier to follow and more trustworthy. Responses that were too verbose or abstract, especially those that introduced new terminology, were rated significantly lower.</p>
+        <section class="comparison" id="comparison">
+            <h2>Comparison with Existing Solutions</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3>Current AgBizLogic Documentation</h3>
+                    <p>Extensive but dense, better suited for advanced users.</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>Existing AI Tools</h3>
+                    <p>Not tailored for agricultural decision-making and often lack clarity or domain-specific knowledge.</p>
+                </div>
+                <div class="comparison-card">
+                    <h3>Our Contribution</h3>
+                    <p>A domain-aware design system integrating conversational support, guided flows, and clearer language tailored to how growers think and operate.</p>
+                </div>
             </div>
         </section>
 
-        <section class="expo-poster">
+        <section class="technical-approach" id="technical">
+            <h2>Technical Approach and Research Process</h2>
+            <div class="tech-content">
+                <p>Our approach combined user-centered design, AI model evaluation, and applied research methods tailored to the agricultural technology domain. We began by conducting interviews with a range of stakeholders, including Oregon growers, university faculty, and student users, to uncover common challenges and workflows associated with AgBizLogic. These conversations provided a foundation for identifying usability gaps and building user personas that shaped our design strategy.</p>
+                
+                <p>In parallel, we reviewed academic and industry literature on AI explainability, conversational user interfaces, and technology adoption in agriculture. This informed both the structure of our prototype and our model evaluation criteria. To test AI assistant integration without building a full backend, we used a Wizard-of-Oz protocol. Participants interacted with simulated chatbot responses, generated by three different large language models(ChatGPT, Claude, and DeepSeek) without knowing which model produced each response. These sessions were followed by surveys that collected data on participants' preferences, perceptions of trust, and suggestions for improvement.</p>
+                
+                <p>On the technical side, we used Figma to develop interactive chatbot prototypes and redesigned user flows. We also used pdfplumber and Tesseract to analyze the structure and readability of AgBizLogic's existing documentation, helping us understand why users found it difficult to follow. Post-test feedback was collected and analyzed using Google Forms and Sheets, allowing us to identify patterns in user behavior and align design decisions with real-world needs.</p>
+            </div>
+        </section>
+
+        <section class="findings" id="findings">
+            <h2>Key Findings from User Testing</h2>
+            <div class="tech-content">
+                <p>User testing revealed several critical insights about how growers and other stakeholders interact with AI and decision-support tools in the agricultural domain. One of the most consistent patterns was a strong preference for responses that were brief, clear, and free of jargon. Among the models tested, DeepSeek consistently outperformed the others, with participants citing its structured and straightforward style as easier to follow and more trustworthy. Responses that were too verbose or abstract, especially those that introduced new terminology, were rated significantly lower.</p>
+                
+                <p>Participants also expressed a clear desire for help systems that were embedded directly into the workflow. Rather than reading through long manuals or navigating external help pages, users preferred contextual, inline guidance that appeared as they worked through their tasks. This preference reinforced the importance of designing support systems that reduce friction and cognitive load. Transparency also played a key role in building trust. Users wanted to understand where an AI-generated answer came from and how it was constructed, especially when it involved financial or environmental recommendations.</p>
+                
+                <p>Finally, we found that simplifying menus and providing visual cues, such as flow diagrams or step-by-step guides, made it easier for users to re-engage with the tool after periods of non-use. These findings directly informed our UX recommendations and the structure of our AI chatbot prototype, helping us ensure that our designs were grounded in the actual needs and behaviors of our target audience.</p>
+            </div>
+        </section>
+
+        <section class="expo-poster" id="poster">
             <h2>Expo Poster</h2>
             <div class="poster-container">
                 <img src="assets/2025.ExpoPoster.001A.png" alt="AgBizLogic AI/UX Capstone Expo Poster" class="poster-image">
@@ -137,22 +194,49 @@
             </div>
         </section>
 
-        <section class="access">
+        <section class="access" id="access">
             <h2>Access and Usage</h2>
-            <p>This project is a research and design deliverable rather than a working software product. However, all project materials are accessible below for review and future development:</p>
-            <ul class="resources-list">
-                <li>Figma Prototype (AI Chatbot Demo): [Link]</li>
-                <li>Final Project Report (PDF): [Link here]</li>
-                <li>Wizard-of-Oz Testing Results (Slides or PDF): [Link here]</li>
-                <li>Capstone Expo Poster (PDF): [Link here]</li>
-                <li>Annotated UX Recommendations: [Link here]</li>
-            </ul>
+            <div class="access-content">
+                <p>This project is a research and design deliverable rather than a working software product. However, all project materials are accessible below for review and future development:</p>
+                
+                <h3>Project Materials</h3>
+                <ul class="resources-list">
+                    <li><a href="#" target="_blank">Figma Prototype (AI Chatbot Demo)</a></li>
+                    <li><a href="#" target="_blank">Final Project Report (PDF)</a></li>
+                    <li><a href="#" target="_blank">Wizard-of-Oz Testing Results</a></li>
+                    <li><a href="#" target="_blank">Capstone Expo Poster</a></li>
+                    <li><a href="#" target="_blank">Annotated UX Recommendations</a></li>
+                </ul>
+                
+                <p>There are no installation requirements. This project is intended to inform and guide future product improvements by the AgBizLogic development team or other UX designers in the agtech space.</p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact Information</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Project Lead</h3>
+                    <p>Akaash Bella</p>
+                    <p>Email: <a href="mailto:bellaak@oregonstate.edu">bellaak@oregonstate.edu</a></p>
+                </div>
+                <div class="contact-card">
+                    <h3>OSU Capstone Program</h3>
+                    <p>School of Electrical Engineering and Computer Science</p>
+                    <p>Oregon State University</p>
+                </div>
+                <div class="contact-card">
+                    <h3>Project Repository</h3>
+                    <p><a href="https://github.com/your-repo" target="_blank">GitHub Repository</a></p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Oregon State University Computer Science Capstone Project</p>
+            <p>&copy; 2025 Oregon State University Computer Science Capstone Project</p>
+            <p>This project is part of the Oregon State University Computer Science Capstone Program</p>
         </div>
     </footer>
 </body>
