@@ -45,8 +45,21 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 4rem 0;
+    padding: 6rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.1;
 }
 
 .hero h1 {
@@ -76,13 +89,16 @@ h1, h2, h3, h4, h5, h6 {
 .tag {
     display: inline-block;
     background: rgba(255, 255, 255, 0.2);
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 1rem;
     border-radius: 20px;
     margin: 0 0.3rem;
     font-size: 0.9rem;
-    font-family: var(--heading-font);
-    font-weight: 500;
-    letter-spacing: 0.02em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.tag:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 /* Section Styles */
@@ -96,6 +112,19 @@ section h2 {
     margin-bottom: 2rem;
     color: var(--primary-color);
     letter-spacing: -0.02em;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
 }
 
 /* Team Grid */
@@ -174,11 +203,12 @@ section h2 {
     background: var(--light-gray);
     padding: 1.5rem;
     border-radius: var(--border-radius);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .feature-card h3 {
@@ -255,7 +285,7 @@ footer {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .main-nav ul {
@@ -279,11 +309,24 @@ footer {
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
+    position: relative;
 }
 
-.main-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.main-nav a:hover::after {
+    width: 80%;
 }
 
 /* Technical Implementation */
@@ -297,11 +340,12 @@ footer {
     background: var(--light-gray);
     padding: 1.5rem;
     border-radius: var(--border-radius);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tech-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .tech-card h3 {
@@ -342,6 +386,12 @@ footer {
     padding: 1.5rem;
     border-radius: var(--border-radius);
     border-left: 4px solid var(--primary-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .comparison-card h3 {
@@ -394,24 +444,35 @@ footer {
     padding: 1.5rem;
     border-radius: var(--border-radius);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .contact-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
     color: var(--primary-color);
-    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
 }
 
 .contact-card a {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 .contact-card a:hover {
     color: var(--accent-color);
+}
+
+.contact-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-style: italic;
 }
 
 /* Technical Approach */
