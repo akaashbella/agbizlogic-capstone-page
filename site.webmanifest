@@ -1,0 +1,24 @@
+{
+    "name": "AgBizLogic AI/UX Capstone",
+    "short_name": "AgBizLogic",
+    "icons": [
+        {
+            "src": "assets/favicon.svg",
+            "sizes": "32x32",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "assets/favicon.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#49a22a",
+    "background_color": "#ffffff",
+    "display": "standalone"
+} 
