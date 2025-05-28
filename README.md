@@ -1,39 +1,69 @@
 # AgBizLogic AI/UX Capstone Project Website
 
-This is a simple, static website showcasing the AgBizLogic AI/UX capstone project from Oregon State University's Computer Science program (2024-2025).
+A website showcasing the AgBizLogic AI/UX capstone project from Oregon State University. This landing page serves as a comprehensive presentation of our research, findings, and recommendations for improving agricultural decision support tools.
 
 ## Project Overview
 
-This website presents the research and findings from a capstone project focused on enhancing usability and trust in agricultural decision support systems. The project explores AI-driven features and UX improvements for the AgBizLogic platform.
+Our capstone project focuses on enhancing the usability and trust in AgBizLogic's decision support tools through AI integration and UX improvements. Key goals include:
 
-## Website Structure
+- Building trust in AI-generated outputs
+- Simplifying user journeys for agricultural decision-making
+- Improving accessibility for users with varying technical experience
+- Providing contextual help through AI-driven features
 
-- `index.html` - Main webpage content
-- `styles.css` - Styling and layout
-- `assets/` - Directory containing images and other media
+## Team Members
 
-## Local Development
+- **Akaash Bella** - Group Lead
+- **Sam Rossback** - UX Researcher
+- **Carly Sherman** - UX Researcher
+- **Raahi Vaidya** - AI Researcher
 
-To run this website locally:
+## Website Features
 
-1. Clone this repository
-2. Open `index.html` in your web browser
+- Responsive design that works on all devices
+- Dark/Light mode toggle for user preference
+- Smooth scrolling and modern animations
+- Accessible navigation and content structure
+- Interactive elements with hover effects
+- Progressive Web App (PWA) support
+- Print-friendly styles
 
-## Deployment
+## Project Structure
 
-This website is designed to be deployed on any static web hosting service, including:
-- GitHub Pages
-- Netlify
-- Vercel
-- Any traditional web hosting service
+```
+agbizlogic-capstone-page/
+├── index.html          # Main website content
+├── styles.css          # Styling and animations
+├── assets/            # Images and icons
+│   ├── favicon.svg    # Website favicon
+│   └── 2025.ExpoPoster.001A.png  # Capstone expo poster
+└── site.webmanifest   # PWA configuration
+```
 
 ## Technologies Used
 
 - HTML5
-- CSS3
-- Minimal JavaScript
-- Responsive design principles
+- CSS3 (with CSS Variables for theming)
+- JavaScript (for dark mode toggle and interactions)
+- Google Fonts (Outfit and Plus Jakarta Sans)
+- SVG icons and graphics
+- Progressive Web App features
+
+## Design Decisions
+
+- **Color Scheme**: Uses AgBizLogic brand colors (#49a22a and #245f0b) with appropriate contrast ratios
+- **Typography**: Combines Outfit for headings and Plus Jakarta Sans for body text
+- **Dark Mode**: Implements a user-friendly dark theme with proper color adjustments
+- **Accessibility**: Maintains WCAG 2.1 compliance with proper contrast and semantic HTML
+- **Responsive Design**: Fluid layouts that adapt to all screen sizes
+- **Performance**: Optimized assets and minimal dependencies
 
 ## License
 
-This project is open source and available for educational purposes. 
+This project is open source and available for educational purposes. All content is property of Oregon State University and the AgBizLogic team.
+
+## Contact
+
+For more information about this project, please contact:
+- Project Lead: Akaash Bella (bellaak@oregonstate.edu or akaash.bella@gmail.com)
+- AgBizLogic: [Visit Official Website](https://www.agbizlogic.com/) 
