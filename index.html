@@ -28,6 +28,18 @@
                 <li><a href="#technical">Technical</a></li>
                 <li><a href="#access">Access</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="5"/>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24">
+                            <path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/>
+                        </svg>
+                        <span class="theme-text">Dark Mode</span>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -222,7 +234,7 @@
                 <div class="contact-card">
                     <h3>Project Lead</h3>
                     <p>Akaash Bella</p>
-                    <p>Email: <a href="mailto:bellaak@oregonstate.edu">bellaak@oregonstate.edu</a></p>
+                    <p><a href="mailto:bellaak@oregonstate.edu">bellaak@oregonstate.edu</a></p>
                 </div>
                 <div class="contact-card">
                     <h3>OSU Capstone Program</h3>
@@ -244,5 +256,41 @@
             <p>This project is part of the Oregon State University Computer Science Capstone Program</p>
         </div>
     </footer>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.querySelector('.theme-toggle');
+        const sunIcon = themeToggle.querySelector('.sun-icon');
+        const moonIcon = themeToggle.querySelector('.moon-icon');
+        const themeText = themeToggle.querySelector('.theme-text');
+
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            updateThemeUI(true);
+        }
+
+        // Toggle theme
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            if (isDark) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+                updateThemeUI(false);
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeUI(true);
+            }
+        });
+
+        // Update UI elements based on theme
+        function updateThemeUI(isDark) {
+            sunIcon.style.display = isDark ? 'block' : 'none';
+            moonIcon.style.display = isDark ? 'none' : 'block';
+            themeText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+        }
+    </script>
 </body>
 </html> 
