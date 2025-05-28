@@ -139,6 +139,12 @@ section h2::after {
     padding: 1.5rem;
     border-radius: var(--border-radius);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .team-member h3 {
@@ -157,6 +163,12 @@ section h2::after {
     background: var(--light-gray);
     padding: 1.5rem;
     border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .timeline-item h3 {
@@ -185,6 +197,12 @@ section h2::after {
     background: var(--light-gray);
     padding: 1.5rem;
     border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .audience-card h3 {
