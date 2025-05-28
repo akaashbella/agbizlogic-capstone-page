@@ -335,6 +335,25 @@
                 });
             }
         });
+
+        // Navigation bar scroll behavior
+        let lastScrollTop = 0;
+        const nav = document.querySelector('.main-nav');
+        const navHeight = nav.offsetHeight;
+        
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > navHeight) {
+                // Scrolling down
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                // Scrolling up
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+        });
     </script>
 </body>
 </html> 

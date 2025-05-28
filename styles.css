@@ -406,10 +406,13 @@ footer {
 /* Navigation */
 .main-nav {
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
 }
 
 .main-nav ul {
