@@ -217,11 +217,21 @@
                 
                 <h3>Project Materials</h3>
                 <ul class="resources-list">
-                    <li><a href="#" target="_blank">Figma Prototype (AI Chatbot Demo)</a></li>
-                    <li><a href="#" target="_blank">Final Project Report (PDF)</a></li>
-                    <li><a href="#" target="_blank">Wizard-of-Oz Testing Results</a></li>
-                    <li><a href="#" target="_blank">Capstone Expo Poster</a></li>
-                    <li><a href="#" target="_blank">Annotated UX Recommendations</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-button" onclick="toggleDropdown(event)">Artificial Intelligence Documentation (COMING SOON)</button>
+                        <div class="dropdown-content">
+                            <a href="#" target="_blank">AI LLM Tools & Software Documentation</a>
+                            <a href="#" target="_blank">Data Privacy & Security</a>
+                            <a href="#" target="_blank">API Pricing Breakdowns</a>
+                            <a href="#" target="_blank">Setup Process for AI Integration for AgBizLogic</a>
+                            <a href="#" target="_blank">Token Optimization Strategies</a>
+                            <a href="#" target="_blank">Simplified Explanations & Visual Aids for Non-Technical Audiences</a>
+                        </div>
+                    </li>
+                    <li><a href="https://www.figma.com/proto/DBCf8QBDrrHtSYconAwuvw/AgBizLogic?node-id=19-2&p=f&t=J8QkumymEFY0OIEf-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=19%3A2" target="_blank"> AI Chatbot Figma Prototype</a></li>
+                    <li><a href="#" target="_blank">Final Project Report (COMING SOON)</a></li>
+                    <li><a href="assets/agbizlogic user testing findings.pdf" target="_blank">Wizard-of-Oz Testing Results</a></li>
+                    <li><a href="assets/2025.ExpoPoster.001A.png" target="_blank">Capstone Expo Poster</a></li>
                 </ul>
                 
                 <p>There are no installation requirements. This project is intended to inform and guide future product improvements by the AgBizLogic development team or other UX designers in the agtech space.</p>
@@ -295,6 +305,36 @@
             moonIcon.style.display = isDark ? 'none' : 'block';
             themeText.textContent = isDark ? 'Light Mode' : 'Dark Mode';
         }
+
+        // Dropdown functionality
+        function toggleDropdown(event) {
+            event.preventDefault();
+            const dropdown = event.target.closest('.dropdown');
+            const content = dropdown.querySelector('.dropdown-content');
+            const button = dropdown.querySelector('.dropdown-button');
+            
+            // Close all other dropdowns
+            document.querySelectorAll('.dropdown-content').forEach(d => {
+                if (d !== content) {
+                    d.classList.remove('show');
+                    d.previousElementSibling.classList.remove('active');
+                }
+            });
+
+            // Toggle current dropdown
+            content.classList.toggle('show');
+            button.classList.toggle('active');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!event.target.closest('.dropdown')) {
+                document.querySelectorAll('.dropdown-content').forEach(d => {
+                    d.classList.remove('show');
+                    d.previousElementSibling.classList.remove('active');
+                });
+            }
+        });
     </script>
 </body>
 </html> 

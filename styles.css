@@ -304,6 +304,96 @@ section h2:hover::after {
     color: var(--primary-color);
 }
 
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.dropdown-button {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    text-align: left;
+    position: relative;
+    padding-left: 1.5rem;
+    width: 100%;
+    transition: color 0.3s ease;
+    margin: 0;
+}
+
+.dropdown-button::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.dropdown-button.active::before {
+    transform: rotate(90deg);
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    left: 0;
+    background-color: var(--background-color);
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: var(--border-radius);
+    margin-top: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light-gray);
+    color: var(--primary-color);
+    padding-left: 2rem;
+}
+
+.dropdown-button:hover,
+.dropdown-button.active {
+    color: var(--accent-color);
+}
+
+/* Update resources list for dropdown */
+.resources-list .dropdown {
+    margin-bottom: 0.5rem;
+    padding-left: 0;
+}
+
+/* Remove the static arrow from the resources list for dropdown items */
+.resources-list .dropdown::before {
+    content: none;
+}
+
+.resources-list li:not(.dropdown) a::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
 /* Footer */
 footer {
     background: var(--primary-color);
