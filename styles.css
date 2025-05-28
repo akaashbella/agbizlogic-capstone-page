@@ -45,10 +45,11 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
-    padding: 6rem 0;
+    padding: 8rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 .hero::before {
@@ -59,7 +60,17 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     bottom: 0;
     background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.1)"/></svg>');
-    opacity: 0.1;
+    opacity: 0.15;
+    animation: patternMove 20s linear infinite;
+}
+
+@keyframes patternMove {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
 }
 
 .hero h1 {
@@ -103,7 +114,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Section Styles */
 section {
-    padding: 4rem 0;
+    padding: 6rem 0;
+    position: relative;
+}
+
+section:nth-child(even) {
+    background: none;
 }
 
 section h2 {
@@ -114,6 +130,11 @@ section h2 {
     letter-spacing: -0.02em;
     position: relative;
     padding-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+section h2:hover {
+    transform: translateX(10px);
 }
 
 section h2::after {
@@ -125,6 +146,11 @@ section h2::after {
     height: 3px;
     background: var(--primary-color);
     border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+section h2:hover::after {
+    width: 100px;
 }
 
 /* Team Grid */
@@ -134,17 +160,30 @@ section h2::after {
     gap: 2rem;
 }
 
-.team-member {
-    background: var(--light-gray);
+.team-member,
+.timeline-item,
+.audience-card,
+.feature-card,
+.comparison-card,
+.contact-card,
+.tech-card {
+    background: linear-gradient(145deg, var(--light-gray), #ffffff);
     padding: 1.5rem;
     border-radius: var(--border-radius);
-    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-.team-member:hover {
+.team-member:hover,
+.timeline-item:hover,
+.audience-card:hover,
+.feature-card:hover,
+.comparison-card:hover,
+.contact-card:hover,
+.tech-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-color: rgba(0,0,0,0.1);
 }
 
 .team-member h3 {
@@ -157,18 +196,6 @@ section h2::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}
-
-.timeline-item {
-    background: var(--light-gray);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .timeline-item h3 {
@@ -193,18 +220,6 @@ section h2::after {
     gap: 2rem;
 }
 
-.audience-card {
-    background: var(--light-gray);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.audience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
 .audience-card h3 {
     color: var(--primary-color);
     margin-bottom: 1rem;
@@ -215,18 +230,6 @@ section h2::after {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-}
-
-.feature-card {
-    background: var(--light-gray);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .feature-card h3 {
@@ -299,11 +302,11 @@ footer {
 
 /* Navigation */
 .main-nav {
-    background: var(--primary-color);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
 }
 
 .main-nav ul {
@@ -327,24 +330,14 @@ footer {
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.main-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background: white;
     transition: all 0.3s ease;
-    transform: translateX(-50%);
+    position: relative;
+    opacity: 0.9;
 }
 
-.main-nav a:hover::after {
-    width: 80%;
+.main-nav a:hover {
+    opacity: 1;
+    background: rgba(255,255,255,0.1);
 }
 
 /* Technical Implementation */
@@ -352,18 +345,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-}
-
-.tech-card {
-    background: var(--light-gray);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tech-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .tech-card h3 {
@@ -412,14 +393,6 @@ footer {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.comparison-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-    letter-spacing: -0.01em;
-}
-
 /* Access Section */
 .access-content {
     background: var(--light-gray);
@@ -455,19 +428,6 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-}
-
-.contact-card {
-    background: var(--light-gray);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .contact-card h3 {
@@ -570,4 +530,9 @@ footer {
         break-inside: avoid;
         border: 1px solid #ddd;
     }
+}
+
+/* Add smooth transitions to all interactive elements */
+a, button, .tag {
+    transition: all 0.3s ease;
 } 
