@@ -264,6 +264,10 @@
         const moonIcon = themeToggle.querySelector('.moon-icon');
         const themeText = themeToggle.querySelector('.theme-text');
 
+        // Set initial state
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+
         // Check for saved theme preference
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
