@@ -45,6 +45,7 @@
     </nav>
 
     <header class="hero">
+        <div class="particles" id="particles"></div>
         <div class="container">
             <h1>AgBizLogic AI/UX</h1>
             <div class="tags">
@@ -268,6 +269,78 @@
     </footer>
 
     <script>
+        // Particle system
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 200;
+        const particles = [];
+        let mouseX = 0;
+        let mouseY = 0;
+
+        // Create particles
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particlesContainer.appendChild(particle);
+            particles.push({
+                element: particle,
+                x: Math.random() * window.innerWidth,
+                y: Math.random() * window.innerHeight,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 4 + 2
+            });
+        }
+
+        // Update particle positions
+        function updateParticles() {
+            particles.forEach(particle => {
+                // Move particles
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+
+                // Bounce off edges
+                if (particle.x < 0 || particle.x > window.innerWidth) particle.vx *= -1;
+                if (particle.y < 0 || particle.y > window.innerHeight) particle.vy *= -1;
+
+                // Mouse interaction
+                const dx = mouseX - particle.x;
+                const dy = mouseY - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100) {
+                    const angle = Math.atan2(dy, dx);
+                    const force = (100 - distance) / 100;
+                    particle.vx -= Math.cos(angle) * force * 0.2;
+                    particle.vy -= Math.sin(angle) * force * 0.2;
+                }
+
+                // Apply particle position
+                particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
+                particle.element.style.width = `${particle.size}px`;
+                particle.element.style.height = `${particle.size}px`;
+                particle.element.style.opacity = '0.5';
+            });
+
+            requestAnimationFrame(updateParticles);
+        }
+
+        // Track mouse position
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Start animation
+        updateParticles();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            particles.forEach(particle => {
+                if (particle.x > window.innerWidth) particle.x = window.innerWidth;
+                if (particle.y > window.innerHeight) particle.y = window.innerHeight;
+            });
+        });
+
         // Theme toggle functionality
         const themeToggle = document.querySelector('.theme-toggle');
         const sunIcon = themeToggle.querySelector('.sun-icon');
